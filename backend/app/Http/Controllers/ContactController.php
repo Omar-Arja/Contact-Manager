@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\Contact;
+use App\Models\Contact;
 use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
@@ -36,13 +36,15 @@ class ContactController extends Controller
 
         $user_id = Auth::id();
 
-        $contact = Contact::create([
-            'name' => $request->name,
-            'phone_number' => $request->phone_number,
-            'longitude' => $request->longitude,
-            'latitude' => $request->latitude,
-            'user_id' => $user_id,
-        ]);
+        $contact = new Contact();
+        
+        $contact->name = $request->name;
+        $contact->phone_number = $request->phone_number;
+        $contact->longitude = $request->longitude;
+        $contact->latitude = $request->latitude;
+        $contact->user_id = $user_id;
+
+        $contact->save();
 
         return response()->json([
             'status' => 'success',
