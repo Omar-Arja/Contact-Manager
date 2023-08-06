@@ -50,8 +50,8 @@ body {
 .contact-card:hover {
   background-color: #444;
   cursor: pointer;
-  transform: scale(1.15) translateY(-10px);
-  margin: 10px;
+  transform: scale(1.04) translateY(-10px);
+  margin: 4px;
 }
 
 .contact-card div {
