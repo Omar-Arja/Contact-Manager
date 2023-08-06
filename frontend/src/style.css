@@ -21,6 +21,10 @@ body {
 
 .contacts-container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .contacts-list {
@@ -81,8 +85,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
+  padding-bottom: 15px;
   margin-top: 20px;
+  border-radius: 5px;
+  width: 60%;
 }
 
 .create h2 {
@@ -95,7 +102,7 @@ body {
 .create form {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 90%;
 }
 
 .create label {
