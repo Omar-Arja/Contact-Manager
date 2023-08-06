@@ -1,9 +1,44 @@
+import React, { useEffect, useState } from 'react';
+import ContactList from './components/ContactList';
+import axios from 'axios';
+import './style.css';
 
+const App = () => {
+  const email = 'omar@arja.com';
+  const password = 'password';
 
-function App() {
+  const data = new FormData();
+  data.append('email', email);
+  data.append('password', password);
+
+  const [my_headers, setHeaders] = useState(null);
+
+  useEffect(() => {
+    const login = async () => {
+      try {
+        const res = await axios.post('http://localhost:8000/api/auth/login', data);
+        const token = res.data.authorisation.token;
+        setHeaders('bearer ' + token);
+      } catch (err) {
+        console.log('Error logging in:', err);
+      }
+    };
+
+    login();
+  }, []);
+
+  if (my_headers === null) {
+    return <h2 className='app'>Loading...</h2>;
+  }
+
   return (
-    null
+    <div className="app">
+      <h1>Contact Manager</h1>
+      <div className="contacts-container">
+        <ContactList my_headers={my_headers} />
+        </div>
+    </div>
   );
-}
+};
 
 export default App;
