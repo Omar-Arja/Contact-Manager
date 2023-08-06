@@ -5,10 +5,10 @@ const ContactCard = ({ contact }) => {
 
     return (
         <div className="contact-card">
-            <div className="contact-card__name">Name: {name}</div>
-            <div className="contact-card__phone_number">Phone Number: {phone_number}</div>
-            <div className="contact-card__coordinates">Longitude: {longitude}</div>
-            <div className="contact-card__coordinates">Latitude: {latitude}</div>
+            <div className="contact-card__name"><span>Name:</span> {name}</div>
+            <div className="contact-card__phone_number"><span>Phone Number: </span>{phone_number}</div>
+            <div className="contact-card__coordinates"><span>Longitude:</span> {longitude}</div>
+            <div className="contact-card__coordinates"><span>Latitude: </span>{latitude}</div>
         </div>
     );
 };

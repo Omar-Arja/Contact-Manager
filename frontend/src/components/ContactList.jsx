@@ -16,7 +16,7 @@ const ContactList = (header) => {
     }, []);
 
     return (
-        <div className="contact-list">
+        <div className="contacts-list">
             {contacts.map((contact, id) => {
                 return <ContactCard key={id} contact={contact}  />
             })}
