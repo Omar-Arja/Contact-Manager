@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ContactList from './components/ContactList';
 import axios from 'axios';
 import './style.css';
+import ContactForm from './components/ContactForm';
 
 const App = () => {
   const email = 'omar@arja.com';
@@ -35,7 +36,7 @@ const App = () => {
     <div className="app">
       <h1>Contact Manager</h1>
       <div className="contacts-container">
-        <ContactList my_headers={my_headers} />
+        <ContactForm my_headers={my_headers} />
         </div>
     </div>
   );
