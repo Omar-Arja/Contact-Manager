@@ -11,6 +11,7 @@ body {
 }
 
 .app {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,6 +26,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
 
 .contacts-list {
@@ -117,6 +119,7 @@ body {
   border-radius: 5px;
   margin-bottom: 15px;
   background-color: #333;
+  color: #fff;
 }
 
 .create button {
@@ -127,8 +130,46 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
+  font-size: 15px;
 }
 
 .create button:hover {
+  background-color: #3d8e41;
+}
+
+.create .buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.buttons button {
+  width: 42%;
+}
+
+.create .buttons .back-btn {
+  background-color: #7a7a7a;
+}
+
+.create .buttons .back-btn:hover {
+  background-color: #4d4d4d;
+}
+
+.add-btn {
+  position: fixed;
+  top: 7%;
+  right: 12%;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+.add-btn:hover {
   background-color: #3d8e41;
 }

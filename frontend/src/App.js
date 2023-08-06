@@ -13,7 +13,7 @@ const App = () => {
   data.append('email', email);
   data.append('password', password);
 
-  const [my_headers, setHeaders] = useState(null);
+  const [headers, setHeaders] = useState(null);
 
   useEffect(() => {
     const login = async () => {
@@ -29,17 +29,22 @@ const App = () => {
     login();
   }, []);
 
-  if (my_headers === null) {
+  if (headers === null) {
     return <h2 className='app'>Loading...</h2>;
   }
 
   return (
+    <BrowserRouter>
     <div className="app">
       <h1>Contact Manager</h1>
       <div className="contacts-container">
-        <ContactForm my_headers={my_headers} />
-        </div>
+        <Routes>
+          <Route path="/" element={<ContactList headers={headers} />} />
+          <Route path="/add-contact" element={<ContactForm headers={headers} />} />
+        </Routes>
+      </div>
     </div>
+  </BrowserRouter>
   );
 };
 
